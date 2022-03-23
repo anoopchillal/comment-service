@@ -27,4 +27,12 @@ public class CommentService {
     public Comment findByCommentId(String commentId) {
         return commentRepository.findById(commentId).get();
     }
+
+    public Comment updateComment(Comment comment, String postId, String commentId) {
+        comment.setCommentID(commentId);
+        comment.setUpdatedAt(LocalDateTime.now());
+        comment.setCreatedAt(commentRepository.findById(commentId).get().getCreatedAt());
+        comment.setPostID(postId);
+        return commentRepository.save(comment);
+    }
 }
