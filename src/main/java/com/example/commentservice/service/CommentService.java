@@ -35,4 +35,9 @@ public class CommentService {
         comment.setPostID(postId);
         return commentRepository.save(comment);
     }
+
+    public String deleteCommentById(String Id) {
+        commentRepository.deleteById(Id);
+        return "Delete ID "+Id+" from DB";
+    }
 }
