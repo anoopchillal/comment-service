@@ -26,4 +26,9 @@ public class CommentController {
         return new ResponseEntity<List<Comment>>(commentService.allComments(), HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/posts/{postId}/comments/{commentId}")
+    public ResponseEntity<Comment> findByCommentId(@PathVariable("postId") String postId, @PathVariable("commentId") String commentId){
+        return new ResponseEntity<>(commentService.findByCommentId(commentId), HttpStatus.ACCEPTED);
+    }
+
 }

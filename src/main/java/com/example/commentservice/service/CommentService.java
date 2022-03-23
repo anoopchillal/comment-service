@@ -23,4 +23,8 @@ public class CommentService {
     public List<Comment> allComments() {
         return commentRepository.findAll();
     }
+
+    public Comment findByCommentId(String commentId) {
+        return commentRepository.findById(commentId).get();
+    }
 }
