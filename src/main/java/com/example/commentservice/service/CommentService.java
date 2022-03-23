@@ -5,6 +5,7 @@ import com.example.commentservice.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class CommentService {
 
@@ -19,4 +20,7 @@ public class CommentService {
     }
 
 
+    public List<Comment> allComments() {
+        return commentRepository.findAll();
+    }
 }
