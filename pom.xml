@@ -98,6 +98,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>comment-service</finalName>
 	</build>
 
 </project>
